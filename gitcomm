@@ -1,0 +1,120 @@
+git commands
+git init
+echo "# your-github-repository” >> README.md
+touch .gitignore
+git add — all
+git add . # all file recursively in current folder
+git status
+git commit -m “Initial commit”
+
+git remote add origin https://github.com/your-github-account/your-github-repository
+
+git push -u origin master
+
+# To pass tags
+git push -u origin <branch_name> --tags
+
+git add <your_file>
+
+# To add and commit in one line
+git commit -am "your git commit message"
+
+git rm -r your_directory
+git rm -f <your_file>
+git rm --cached <your_file> # just to remove from version control but not your hard drive
+
+# To see git changes
+git log
+git show
+
+# To see what git is tracking
+git ls-files
+
+# To remove an add
+git reset HEAD <filename>
+
+# To remove a previous change
+git checkout -- <filename>
+
+# To see changes in a more readable format
+git log --oneline --graph --decorate --all
+
+# To add an alias to the above log command
+git config --global alias.hist "log --oneline --graph --decorate --all"
+
+# To see a branch
+git branch
+
+# To see all branches
+git branch -a
+
+# To create a branch
+git branch <branch_name>
+
+# To work on a branch
+git checkout <branch_name>
+
+To create and work on a branch
+git checkout -b <branch_name>
+
+# To see differences between a branch and master, etc
+git diff
+git diff <branch_name> master
+git diff <commit alphanum char> HEAD
+
+# To delete a local branch
+git branch -d <branch_name>
+
+# Delete a remote branch
+git push <remote_name> --delete <branch_name>
+
+# To do a fast forward merge (i.e. no conflicting difference between master and the branch
+git merge <branch_name>
+
+# To force changes of the local repo to remote
+git push -f <remote_name> <branch_name>
+
+# To merge remote repo to master
+git checkout master
+git pull <remote_name> <branch_name>
+press "i"
+write your merge message
+press "esc"
+write ":wq"
+then press enter
+git push origin master
+
+# To create tags(mark events i.e. release numbers etc.)
+git tag <tag_name>
+
+# To create annotated tags
+git tag -a <annotated_tag_name> -m "message string"
+# example git tag -a v0.1 -m "Release 0.1"
+
+To see annotated meta data of tag
+git show <annotated_tag_name>
+
+# To delete a tag
+git tag -d <tag_name>
+
+# To see a list of all tags
+git tag --list
+
+# To stash a commit (work in process, because got pulled to work on something else before commit)
+git stash
+
+# To see all stashes
+git stash list
+
+# To apply a stash
+git stash pop
+
+# To go to a different commit point
+# Least distructive and changes where HEAD is pointing, can back out our changes
+git reset <commit_id> --soft
+
+# It unstages assets/files
+git reset <commit_id> --mixed
+
+# Wipes out all changes
+git reset <commit_id> --hard
